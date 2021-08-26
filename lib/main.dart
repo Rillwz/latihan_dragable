@@ -58,6 +58,36 @@ class _MyAppState extends State<MyApp> {
                     ),
                   ),
                 ),
+                Draggable<Color>(
+                  data: color2,
+                  child: SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: Material(
+                      color: color2,
+                      shape: StadiumBorder(),
+                      elevation: 3,
+                    ),
+                  ),
+                  childWhenDragging: SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: Material(
+                      color: Colors.grey,
+                      shape: StadiumBorder(),
+                      elevation: 0,
+                    ),
+                  ),
+                  feedback: SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: Material(
+                      color: color2.withOpacity(0.7),
+                      shape: StadiumBorder(),
+                      elevation: 3,
+                    ),
+                  ),
+                ),
               ],
             ),
             DragTarget<Color>(
